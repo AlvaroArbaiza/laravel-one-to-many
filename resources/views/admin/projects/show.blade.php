@@ -43,6 +43,18 @@
                 {{ $project['price'] }}
             </h6>
 
+            {{-- tipologia di progetto --}}
+            <h6 class="card-subtitle mb-2">
+                <span class="text-white-50">Tipologia Progetto: </span>
+                {{ $project->type->name }}
+            </h6>
+
+            {{-- slug progetto --}}
+            <h6 class="card-subtitle mb-2">
+                <span class="text-white-50">Slug Tipologia Progetto: </span>
+                {{ $project->type->slug}}
+            </h6>
+
             {{-- data creazione --}}
             <h6 class="card-subtitle mb-2">
                 <span class="text-white-50">Data: </span>
@@ -54,11 +66,11 @@
             <div class="d-flex justify-content-between">
                 {{-- edit --}}
                 {{-- bottone con rotta che riconduce all'id della tabella dell'elemento selezionato --}}
-                <a href="{{ route('work.edit', $project ) }}" class="btn btn-info fw-bold">Modifica</a>
+                <a href="{{ route('projects.edit', $project ) }}" class="btn btn-info fw-bold">Modifica</a>
     
                 {{-- delete --}}
                 {{-- Inserisco nell'attributo action la rotta destroy, passando la variabile $project['id'] per cancellare l'elemento corrente --}}
-                <form action="{{ route('work.destroy', $project['id']) }}" method="POST">
+                <form action="{{ route('projects.destroy', $project['id']) }}" method="POST">
     
                     @csrf
                     @method('DELETE')

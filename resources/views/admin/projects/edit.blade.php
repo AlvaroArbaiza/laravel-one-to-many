@@ -97,7 +97,7 @@
 
                         <option disabled>Scegli Tipologia</option>
                         @foreach($types as $type)
-                            <option value="{{ $type->id }}" {{ old('type_id', $project->type_id) == $type->id }}>{{ $type->name }}</option>
+                            <option value="{{ $type->id }}" {{ old('type_id', $project->type_id) == $type->id ? 'selected' : '' }}>{{ $type->name }}</option>
                         @endforeach
                     </select>
                     {{-- error --}}
