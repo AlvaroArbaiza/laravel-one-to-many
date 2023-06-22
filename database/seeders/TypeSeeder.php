@@ -24,9 +24,9 @@ class TypeSeeder extends Seeder
             'Design'
         ];
 
-        foreach ($types as $type) {
+        foreach ($types as $element) {
             $new_type = new Type();
-            $new_type->name = $type;
+            $new_type->name = $element;
             $new_type->slug = Str::slug( $new_type->name , '-');
             $new_type->save();
         }

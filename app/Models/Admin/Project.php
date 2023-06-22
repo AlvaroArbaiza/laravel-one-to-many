@@ -21,10 +21,16 @@ class Project extends Model
         'type_customer',
         'price',
         'created',
-        'image'
+        'image',
+        'type_id'
     ];
 
     public static function toSlug($title) {
         return Str::slug($title, '-');
+    }
+
+    // funzione nella quale specifichiamo una relazione di dipendenza nei confronti della tabella Type
+    public function type() {
+        return $this->belongsTo(Type::class);
     }
 }

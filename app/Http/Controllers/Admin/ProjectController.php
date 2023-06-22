@@ -7,6 +7,8 @@ use Illuminate\Http\Request;
 
 // Importazione modello Project
 use App\Models\Admin\Project;
+// Importazione modello Project
+use App\Models\Admin\Type;
 
 // Importazione file Request
 use App\Http\Requests\StoreProjectRequest;
@@ -38,7 +40,9 @@ class ProjectController extends Controller
      */
     public function create()
     {
-        return view('admin.projects.create'); 
+
+        $types = Type::all();
+        return view('admin.projects.create', compact('types')); 
     }
 
     /**
@@ -106,7 +110,9 @@ class ProjectController extends Controller
     //  preso l'elemento intero come parametro, lo passo all'interno del file edit.blade.php
     public function edit(Project $project)
     {        
-        return view('admin.projects.edit', compact('project'));
+        $types = Type::all();
+
+        return view('admin.projects.edit', compact('project', 'types'));
     }
 
     /**
