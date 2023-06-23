@@ -34,7 +34,8 @@ class UpdateProjectRequest extends FormRequest
             'type_customer' => 'required|max:30',
             'price' => 'required|max:15',
             'created' => 'required|date',
-            'image' => 'nullable|image|max:6000'
+            'image' => 'nullable|image|max:6000',
+            'type_id' => 'nullable|exists:types,id'
         ];
     }
     

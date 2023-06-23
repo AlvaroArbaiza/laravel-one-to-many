@@ -59,6 +59,9 @@
                         {{-- projects --}}
                         <a class="dropdown-item" href="{{ route('projects.index') }}">{{__('Projects')}}</a>
 
+                        {{-- types --}}
+                        <a class="dropdown-item" href="{{ route('types.index') }}">{{__('Types')}}</a>
+
                         {{-- logout --}}
                         <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();
                                              document.getElementById('logout-form').submit();">
